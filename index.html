@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .fact-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="fact-container">
+        <h1>Cricket Fact</h1>
+        <p id="fact"></p>
+        <button onclick="newFact()">Show Another Fact</button>
+    </div>
+
+    <script>
+        const facts = [
+            "Cricket is one of the oldest team sports, with origins dating back to the 16th century.",
+            "The longest recorded cricket match lasted for 14 days in 1939 between England and South Africa.",
+            "The highest individual score in a One Day International (ODI) is 264 runs, achieved by Rohit Sharma in 2014.",
+            "Cricket is played in over 100 countries, with the International Cricket Council (ICC) governing the sport.",
+            "The first-ever Test match was played between Australia and England in 1877.",
+            "The fastest century in ODI cricket was scored by AB de Villiers in just 31 balls.",
+            "The Cricket World Cup is held every four years, with the first tournament taking place in 1975.",
+            "The Ashes is one of the oldest and most celebrated rivalries in cricket, contested between England and Australia.",
+            "The term 'hat-trick' in cricket refers to a bowler taking three wickets in three consecutive deliveries.",
+            "Cricket has three formats: Test, One Day Internationals (ODIs), and Twenty20 (T20)."
+        ];
+
+        function newFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+        }
+
+        // Show a fact on initial load
+        newFact();
+    </script>
+</body>
+</html>
